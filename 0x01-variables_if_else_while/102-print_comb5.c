@@ -1,37 +1,35 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
 /**
- * main-a program that prints all possible combination of two
- * two-digits numbers
- * Return: Always 0 (Sucess)
- */
+  *main- a program printing every combination of
+  *two digit numbers without repetition
+  *
+  *Return: 0
+  *
+  */
 int main(void)
 {
-	int p, o;
+int x;/*first*/
+int y;/*second*/
 
-	for (o = 0; o <= 98; o++)
+	for (x = 0; x < 100; x++)
 	{
-		for (p = 0; p <= 99; p++)
+		for (y = 0; y < 100; y++)
 		{
-			if (o < p)
+			if (x < y)
 			{
-				putchar((o / 10) + '0');
-				putchar((o % 10) + '0');
-				putchar(' ');
-				putchar((p / 10) + '0');
-				putchar((p % 10) + '0');
-
-				if (o != 98 || p != 99)
+				putchar('0' + x / 10);
+				putchar('0' + x % 10);
+				putchar(32);
+				putchar('0' + y / 10);
+				putchar('0' + y % 10);
+				if (x != 98 || y != 99)
 				{
-					putchar(',');
-					putchar(' ');
+					putchar(44);
+					putchar(32);
 				}
 			}
 		}
 	}
-	putchar('\n');
-
-	putchar (0);
+		putchar('\n');
+		return (0);
 }
